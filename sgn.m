@@ -1,3 +1,7 @@
 function signum = sgn(v)
-signum = sign(sign(v)-.1); %return negative if v==0
+%SGN( v ) returns the signum of v
+%   S = SGN( v ) returns the signum of v and negative if (v == 0)
+
+signum = sign(sign(v)-.1);
+
 return;

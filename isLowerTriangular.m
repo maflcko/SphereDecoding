@@ -6,7 +6,6 @@ function out = isLowerTriangular( M )
 % Marco Falke [2014]
 
 out=isUpperTriangular(M');
-return;
 
 end
 

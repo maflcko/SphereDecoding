@@ -5,11 +5,15 @@ function u_closest = decode3( y, H )
 %   row vector y.
 %   (Algorithm 3 by A. Ghasemmehdi, E. Agrell)
 
-% A. Ghasemmehdi, E. Agrell, “Faster Recursions in Sphere Decoding,”
-% IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530–3536, June 2011.
+% A. Ghasemmehdi, E. Agrell, "Faster Recursions in Sphere Decoding,"
+% IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536, June 2011.
 
 n=size(H,1);
 
+if any(diag(H)<0)
+    error('decode:negtiveDiag',...
+        'All diagonal elements must be positive')
+end
 if ~isLowerTriangular(H) 
     error('decode:notTriangular',...
         'The input matrix has to be lower triangular')

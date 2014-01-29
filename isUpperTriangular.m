@@ -16,7 +16,6 @@ for row=2:size(M,1)
     end
 end
 out =true;
-return;
 
 end
 
