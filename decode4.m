@@ -43,9 +43,7 @@ while(true) %LOOP_LABEL
     while(loop_down)
         if(~(k==1))
             k=k-1;
-            for a=1:k
-                E(k,a)=E(k+1,a)-gamma*H(k+1,a);
-            end
+            E(k,1:k)=E(k+1,1:k)-gamma*H(k+1,1:k);
             u(k)=roundc(E(k,k),U_min,U_max);
             gamma=(E(k,k)-u(k))/H(k,k);
             step(k)=sgn(gamma);
