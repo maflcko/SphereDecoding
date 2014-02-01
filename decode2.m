@@ -31,12 +31,12 @@ end
 rho_n=Inf;
 k=n+1;
 dist(n+1)=0;
+loop_down=true;
 
 u(n)=0;% init needed due to matlab 'restrictions'
 
 while(true) %LOOP_LABEL
     
-    loop_down=true;
     while(loop_down)
         if(~(k==1))
             k=k-1;
@@ -52,8 +52,7 @@ while(true) %LOOP_LABEL
         loop_down=(dist(k)<rho_n);
     end
     
-    loop_up=true;
-    while(loop_up)
+    while(~loop_down)
         if (k==n)
             return;
         else
@@ -72,7 +71,7 @@ while(true) %LOOP_LABEL
             end
             dist(k)=dist(k+1)+gamma^2;
         end
-        loop_up=(dist(k)>=rho_n);
+        loop_down=(dist(k)<rho_n);
      end
 
 end % GOTO LOOP_LABEL

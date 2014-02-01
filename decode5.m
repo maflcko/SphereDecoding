@@ -33,10 +33,10 @@ k=n+1;
 d=zeros(1,n)+n;
 dist(n+1)=0;
 F(n,1:n)=y(1:n);
+loop_down=true;
 
 while(true) %LOOP_LABEL
     
-    loop_down=true;
     while(loop_down)
         if(~(k==1))
             k=k-1;
@@ -56,8 +56,7 @@ while(true) %LOOP_LABEL
     end
     
     m=k;
-    loop_up=true;
-    while (loop_up)
+    while(~loop_down)
         if (k==n)
             return;
         else
@@ -67,7 +66,7 @@ while(true) %LOOP_LABEL
             gamma=(p(k)-u(k))*G(k,k);
             dist(k)=dist(k+1)+gamma^2;
         end
-        loop_up=(dist(k)>=rho_n);
+        loop_down=(dist(k)<rho_n);
     end
 
     d(m:k-1)=k;

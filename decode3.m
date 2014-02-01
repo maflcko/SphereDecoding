@@ -36,10 +36,10 @@ u(n)=round(E(n,n));
 gamma=(E(n,n)-u(n))/H(n,n);
 step(n)=sgn(gamma);
 dist(n)=gamma^2;
+loop_down=true;
 
 while(true) %LOOP_LABEL
     
-    loop_down=true;
     while(loop_down)
         if(~(k==1))
             k=k-1;
@@ -55,8 +55,7 @@ while(true) %LOOP_LABEL
         loop_down=(dist(k)<rho_n);
     end
     
-    loop_up=true;
-    while(loop_up)
+    while(~loop_down)
         if (k==n)
             return;
         else
@@ -66,7 +65,7 @@ while(true) %LOOP_LABEL
             gamma=(E(k,k)-u(k))/H(k,k);
             dist(k)=dist(k+1)+gamma^2;
         end
-        loop_up=(dist(k)>=rho_n);
+        loop_down=(dist(k)<rho_n);
     end
     
 end % GOTO LOOP_LABEL
