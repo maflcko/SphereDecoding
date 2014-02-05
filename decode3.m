@@ -8,26 +8,10 @@ function u_closest = decode3( y, H )
 % A. Ghasemmehdi, E. Agrell, "Faster Recursions in Sphere Decoding,"
 % IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536, June 2011.
 
-n=size(H,1);
-
-if any(diag(H)<0)
-    error('decode:negtiveDiag',...
-        'All diagonal elements must be positive')
-end
-if ~isLowerTriangular(H) 
-    error('decode:notTriangular',...
-        'The input matrix has to be lower triangular')
-end
-if ~(rank(H)==n)
-    error('decode:linearDependent',...
-        'The input matrix has to be linearly independent')
-end
-if ~(length(y)==n)
-    error('decode:dimensionMismatch',...
-        'The input matrix and vector have to be of the same dimension')
-end
+validateInput(H,y,0,0);
 
 %= Initialize =%
+n=size(H,1);
 rho_n=Inf;
 k=n;
 dist(n+1)=0;
