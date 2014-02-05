@@ -1,6 +1,6 @@
-function [G, y] = preprocess(D,x)
+function [y, G] = preprocess(x, D)
 %PREPROCESS alorithm for lattice decode
-%   [G, y] = PREPROCESS(D,x)
+%   [y, G] = PREPROCESS(x, D)
 %   Returns the lower triangular matrix G and the vector y used for the
 %   lattice decoding algorithms by Agrell et. al. Input is any generator
 %   matrix D and the vector x which is to be decoded.
