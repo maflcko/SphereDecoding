@@ -1,10 +1,9 @@
 function validateInput( M, y, U_min, U_max)
-%FUN2 Summary of this function goes here
-%   Detailed explanation goes here
-
-%VALIDATEINPUTINF validates the input of the sphere decoding algorithms
-%   Throws an error if the input can not be decoded using one of the
+%VALIDATEINPUT validates the input of the sphere decoding algorithms
+%   Throws an error if the input can not be decoded using any of the
 %   sphere decoding algorithms.
+
+% Marco Falke [2014]
 
 n=size(M,1);
 
