@@ -1,6 +1,6 @@
 Sphere Decoder
 ==============
-An implementation of the eight Sphere Decoder algorithms by A. Ghasemmehdi and E. Agrell, 2011 ("Faster Recursions in Sphere Decoding," IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536).
+An Matlab/Octave implementation of the eight Sphere Decoding algorithms by A. Ghasemmehdi and E. Agrell, 2011 ("Faster Recursions in Sphere Decoding," IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536).
 
 Usage
 -----
@@ -11,10 +11,6 @@ For instance:
     >> u = decode5([-1.2 2.8], eye(2))
     u =
         -1     3
-
-Support
--------
-Currently this works with Matlab; Octave support is on the TODO-list.
 
 License
 -------
