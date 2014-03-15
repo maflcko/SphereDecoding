@@ -9,15 +9,20 @@ function u_closest = decode1( y, G )
 % IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536, June 2011.
 
 validateInput(G,y,0,0);
-
-%= Initialize =%
 n=size(G,1);
+
+%= Declaration =%
+dist=zeros(1,n+1);
+u=zeros(1,n);
+p=zeros(1,n);
+step=zeros(1,n);
+u_closest=zeros(1,n);
+
+%= Initialization =%
 rho_n=Inf;
 k=n+1;
 dist(n+1)=0;
 loop_down=true;
-
-u(n)=0;% init needed due to matlab 'restrictions'
 
 while(true) %LOOP_LABEL
     

@@ -9,17 +9,23 @@ function u_closest = decode7( y, H )
 % IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536, June 2011.
 
 validateInput(H,y,0,0);
-
-%= Initialize =%
 n=size(H,1);
+
+%= Declaration =%
+dist=zeros(1,n+1);
+u=zeros(1,n);
+E=zeros(n,n);
+step=zeros(1,n);
+u_closest=zeros(1,n);
+gamma=zeros(1,n);
+
+%= Initialization =%
 rho_n=Inf;
 k=n+1;
 d=zeros(1,n)+n;
 dist(n+1)=0;
 E(n,:)=y*H;
 loop_down=true;
-
-gamma(n)=0; %init needed due to matlab 'restrictions'
 
 while(true) %LOOP_LABEL
     
