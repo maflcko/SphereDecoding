@@ -1,6 +1,6 @@
 Sphere Decoding
 ==============
-An Matlab/Octave implementation of the eight Sphere Decoding algorithms outlined by A. Ghasemmehdi and E. Agrell, 2011 ("Faster Recursions in Sphere Decoding," IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536).
+A Matlab/Octave implementation of the eight Sphere Decoding algorithms outlined by A. Ghasemmehdi and E. Agrell, 2011 ("Faster Recursions in Sphere Decoding," IEEE Trans. Inf. Theory, vol. 57, no. 6, pp. 3530-3536).
 
 Usage
 -----
